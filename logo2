@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity Quadrant - Static Masterbrand</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --brand: #000000;
+            --guide-line: #f0f0f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Optima", "Didot", "Cinzel", "Source Han Serif CN", serif;
+        }
+
+        /* Logo 主体：基于精密网格布局 */
+        .logo-frame {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0; /* 极致的无缝衔接 */
+        }
+
+        /* 结构辅助线：体现工业设计的严谨 */
+        .logo-frame::before {
+            content: '';
+            position: absolute;
+            top: -20px; bottom: -20px; left: 50%;
+            width: 1px; background: var(--guide-line);
+        }
+        .logo-frame::after {
+            content: '';
+            position: absolute;
+            left: -20px; right: -20px; top: 50%;
+            height: 1px; background: var(--guide-line);
+        }
+
+        .q {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 核心几何：切割的无穷大 */
+        .arc {
+            position: absolute;
+            border: 12px solid var(--brand);
+            border-radius: 50%;
+            width: 140%;
+            height: 140%;
+        }
+
+        /* 象限1：左上弧线 */
+        .q1 .arc {
+            bottom: -70%;
+            right: -70%;
+        }
+
+        /* 象限4：右下弧线 - 形成对角呼应 */
+        .q4 .arc {
+            top: -70%;
+            left: -70%;
+        }
+
+        /* 装饰点：象征数据节点与象限坐标轴 */
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--brand);
+            border-radius: 50%;
+        }
+        .dot-q2 { top: 0; right: 0; }
+        .dot-q3 { bottom: 0; left: 0; }
+
+        /* 品牌文字排版：衬线体带来的权威感 */
+        .brand-footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.6em;
+            text-indent: 0.6em;
+            color: var(--brand);
+            margin-bottom: 12px;
+        }
+
+        .sub-title {
+            font-size: 10px;
+            letter-spacing: 0.5em;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        /* 黄金比例装饰线 */
+        .divider {
+            width: 30px;
+            height: 2px;
+            background: var(--brand);
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-frame">
+        <div class="q q1"><div class="arc"></div></div>
+        <div class="q q2"><div class="dot dot-q2"></div></div>
+        <div class="q q3"><div class="dot dot-q3"></div></div>
+        <div class="q q4"><div class="arc"></div></div>
+    </div>
+
+    <div class="brand-footer">
+        <h1 class="main-title">无极象限</h1>
+        <div class="divider"></div>
+        <div class="sub-title">Infinity Quadrant Technology</div>
+    </div>
+
+</body>
+</html>
