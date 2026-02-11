@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>INFINITY QUADRANT | The Absolute Zero</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --line: #ffffff;
+            --dim: #333333;
+        }
+
+        body {
+            background-color: var(--bg);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, "Baskerville", serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 核心 Logo：利用错位产生的无限张力 */
+        .master-logo {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 象征象限的十字基准线：极淡，几乎消失 */
+        .axis {
+            position: absolute;
+            background: var(--dim);
+        }
+        .axis-h { width: 160px; height: 1px; }
+        .axis-v { width: 1px; height: 160px; }
+
+        /* 核心符号：两个完全对称但反向错位的“无极之弧” */
+        .element {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--line);
+        }
+
+        /* 象限 1 的演变：开口向外的无限延展 */
+        .e1 {
+            top: 0;
+            left: 0;
+            border-radius: 100% 0 0 0;
+            border-bottom: none;
+            border-right: none;
+            /* 关键位移：产生维度撕裂感 */
+            transform: translate(-4px, -4px);
+        }
+
+        /* 象限 4 的演变：闭环的逻辑回旋 */
+        .e4 {
+            bottom: 0;
+            right: 0;
+            border-radius: 0 0 100% 0;
+            border-top: none;
+            border-left: none;
+            transform: translate(4px, 4px);
+        }
+
+        /* 文字排版：极致的字间距，产生奢侈品的稀缺感 */
+        .brand-text {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .en {
+            color: var(--line);
+            font-size: 10px;
+            font-weight: 200;
+            letter-spacing: 2.5em; /* 极宽间距 */
+            text-indent: 2.5em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .cn {
+            color: var(--line);
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 0.8em;
+            text-indent: 0.8em;
+            /* 使用渐变隐藏笔锋，营造一种若隐若现的高级感 */
+            mask-image: linear-gradient(to right, white 80%, transparent);
+            -webkit-mask-image: linear-gradient(to right, white 80%, transparent);
+        }
+
+        /* 底部坐标，彰显精密性 */
+        .coordinates {
+            position: fixed;
+            bottom: 40px;
+            color: #222;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="master-logo">
+        <div class="axis axis-h"></div>
+        <div class="axis axis-v"></div>
+        <div class="element e1"></div>
+        <div class="element e4"></div>
+    </div>
+
+    <div class="brand-text">
+        <div class="en">Infinity Quadrant</div>
+        <div class="cn">无极象限</div>
+    </div>
+
+    <div class="coordinates">LAT: 0.0000000 / LONG: 0.0000000 / SCALE: 1.0</div>
+
+</body>
+</html>
