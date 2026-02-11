@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无极象限科技 | 品牌视觉系统</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --primary-color: #00f2ff;
+            --secondary-color: #7000ff;
+            --text-color: #ffffff;
+            --logo-size: 120px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            overflow: hidden;
+        }
+
+        /* Logo 容器 */
+        .logo-container {
+            position: relative;
+            width: var(--logo-size);
+            height: var(--logo-size);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 8px;
+            transform: rotate(45deg); /* 菱形构图，增加动感 */
+            animation: containerFloat 6s ease-in-out infinite;
+        }
+
+        /* 四个象限的基础样式 */
+        .quadrant {
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-color);
+            box-sizing: border-box;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        /* 象限圆角处理 - 构建内敛的圆环感 */
+        .q1 { border-radius: 100% 0 0 0; border-color: var(--primary-color); }
+        .q2 { border-radius: 0 100% 0 0; border-color: var(--secondary-color); }
+        .q3 { border-radius: 0 0 0 100%; border-color: var(--secondary-color); opacity: 0.7; }
+        .q4 { border-radius: 0 0 100% 0; border-color: var(--primary-color); opacity: 0.7; }
+
+        /* 动态发光效果 */
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            box-shadow: 0 0 20px 5px var(--primary-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: corePulse 3s infinite;
+        }
+
+        /* 品牌文字 */
+        .brand-name {
+            margin-top: 60px;
+            color: var(--text-color);
+            text-align: center;
+            letter-spacing: 0.8em;
+            text-indent: 0.8em;
+        }
+
+        .brand-name h1 {
+            font-size: 24px;
+            font-weight: 300;
+            margin: 0;
+            background: linear-gradient(90deg, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-tagline {
+            font-size: 10px;
+            color: #666;
+            margin-top: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        /* 动画定义 */
+        @keyframes containerFloat {
+            0%, 100% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(50deg) scale(1.05); }
+        }
+
+        @keyframes corePulse {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+        }
+
+        /* 悬停交互 */
+        .logo-container:hover .quadrant {
+            border-radius: 50%; /* 悬停时从象限演变为圆，意为“破界” */
+            border-color: #fff;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <div class="quadrant q1"></div>
+        <div class="quadrant q2"></div>
+        <div class="quadrant q3"></div>
+        <div class="quadrant q4"></div>
+    </div>
+
+    <div class="brand-name">
+        <h1>无极象限</h1>
+        <div class="brand-tagline">INFINITY QUADRANT TECH</div>
+    </div>
+
+</body>
+</html>
